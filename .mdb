@@ -1,0 +1,10 @@
+{
+  "projectName": "lure",
+  "meta": {
+    "type": "backend"
+  },
+  "backend": {
+    "platform": "node17"
+  },
+  "hash": "80583c14"
+}
