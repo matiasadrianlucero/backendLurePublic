@@ -1,10 +1,10 @@
-import { querycheckifFavourite } from '../../../queries/post/favourites/querycheckifFavourite.js';
+import { querycheckIfFavourite } from '../../../queries/post/favourites/querycheckIfFavourite.js';
 import { queryFavouriteDelete } from '../../../queries/post/favourites/queryFavouriteDelete.js';
 import { queryFavourite} from '../../../queries/post/favourites/queryFavourite.js';
 
 export  async function favouritePost(req,res){
     try{
-        let checkResult= await querycheckifFavourite(req.body.postId,res.locals.tojwt.id)
+        let checkResult= await querycheckIfFavourite(req.body.postId,res.locals.tojwt.id)
         if(checkResult){
             queryFavouriteDelete(req.body.postId,res.locals.tojwt.id,checkResult[0].id)
             res.status(200).send({result:true})
